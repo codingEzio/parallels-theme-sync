@@ -41,4 +41,10 @@ launchctl bootout "$service"
 
 `--sync` 输出 `applied`（已应用）、`matched`（已匹配）或 `skipped`（已跳过）。退出码 0 表示 Windows 已确认主题及两项颜色设置，3 表示虚拟机或 Windows 桌面不可用，1 表示操作失败，2 表示参数无效。后台任务以 `local.parallels-theme-sync` 为标记，将变更与失败写入 Mac 系统日志。
 
-当前为本地源码候选版。主题切换机制已在 Apple Silicon、macOS 27.3、Parallels Desktop 27.1.0 和一台 Windows 11 虚拟机上验证。独立版已做构建和模拟集成检查。Windows 端使用未公开的 `IThemeManager2` 接口，Windows 更新可能影响兼容性。参见[第三方声明](THIRD_PARTY_NOTICES.md)。
+## 兼容性
+
+已在 Apple Silicon、macOS 27.3、Parallels Desktop 27.1.0 和 Windows 11 上验证手动及自动同步。测试期间没有终端弹出或抢焦点。重启后登录及其他版本组合仍待验证。Windows 端使用未公开的 `IThemeManager2` 接口，Windows 更新可能影响兼容性。
+
+## 许可
+
+[MIT](LICENSE)。参见[第三方声明](THIRD_PARTY_NOTICES.md)。

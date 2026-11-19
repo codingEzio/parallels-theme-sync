@@ -41,4 +41,10 @@ To resume, run `launchctl enable "$service"` and run the install command again. 
 
 `--sync` prints `applied`, `matched`, or `skipped`. Exit 0 means Windows confirmed the theme and both color settings. Exit 3 means the VM or Windows desktop was unavailable. Exit 1 means an operation failed. Exit 2 means the arguments were invalid. The watcher reports changes and failures to the Mac system log under `local.parallels-theme-sync`.
 
-This is a local source candidate. The theme mechanism was checked on an Apple Silicon Mac with macOS 27.3, Parallels Desktop 27.1.0 and a Windows 11 guest. The standalone package has build and simulated integration checks. Windows uses the undocumented `IThemeManager2` interface, so Windows updates can affect compatibility. See the [third-party notices](THIRD_PARTY_NOTICES.md).
+## Compatibility
+
+Manual and automatic sync were verified on Apple Silicon with macOS 27.3, Parallels Desktop 27.1.0 and Windows 11. Neither operation opened or focused a terminal during the test. Login after reboot and other version combinations remain unverified. Windows uses the undocumented `IThemeManager2` interface, so Windows updates can affect compatibility.
+
+## License
+
+[MIT](LICENSE). See the [third-party notices](THIRD_PARTY_NOTICES.md).

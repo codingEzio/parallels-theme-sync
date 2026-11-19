@@ -41,4 +41,10 @@ launchctl bootout "$service"
 
 `--sync` 輸出 `applied`（已套用）、`matched`（已符合）或 `skipped`（已跳過）。結束代碼 0 表示 Windows 已確認佈景主題及兩項色彩設定，3 表示虛擬機器或 Windows 桌面無法使用，1 表示操作失敗，2 表示引數無效。背景工作以 `local.parallels-theme-sync` 為標記，將變更與失敗寫入 Mac 系統日誌。
 
-目前為本機原始碼候選版。佈景主題切換機制已在 Apple Silicon、macOS 27.3、Parallels Desktop 27.1.0 和一台 Windows 11 虛擬機器上驗證。獨立版已做建置和模擬整合檢查。Windows 端使用未公開的 `IThemeManager2` 介面，Windows 更新可能影響相容性。請參閱[第三方聲明](THIRD_PARTY_NOTICES.md)。
+## 相容性
+
+已在 Apple Silicon、macOS 27.3、Parallels Desktop 27.1.0 和 Windows 11 上驗證手動及自動同步。測試期間沒有終端機視窗彈出或取得焦點。重新啟動後登入及其他版本組合仍待驗證。Windows 端使用未公開的 `IThemeManager2` 介面，Windows 更新可能影響相容性。
+
+## 授權
+
+[MIT](LICENSE)。請參閱[第三方聲明](THIRD_PARTY_NOTICES.md)。
