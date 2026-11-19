@@ -65,7 +65,8 @@ proc checked(program: string; args: openArray[string]): string =
   response.output
 
 proc findPrlctl(): string =
-  let fromPath = findExe("prlctl")
+  # The Parallels wrapper selects the tool by the name used to invoke it.
+  let fromPath = findExe("prlctl", followSymlinks = false)
   if fromPath.len > 0: return absolutePath(fromPath)
   for path in ["/usr/local/bin/prlctl", "/Applications/Parallels Desktop.app/Contents/MacOS/prlctl"]:
     if access(path.cstring, X_OK) == 0: return path
